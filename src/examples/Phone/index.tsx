@@ -98,31 +98,40 @@ export const Phone = defineComponent({
 						onClose={() => {
 							drawer.value = false
 							SHInfo.value = []
+							QQInfo.value = []
+							WBInfo.value = []
+							ZJInfo.value = []
+							WKInfo.value = []
 						}}>
 						{SHInfo.value.length !== 0 ? (
 							<DrawerSh info={SHInfo.value} />
 						) : (
-							'暂无上海共产党数据'
+							// '暂无上海共产党数据'
+							''
 						)}
 						{QQInfo.value.length !== 0 ? (
 							<DrawerQQ info={QQInfo.value} />
 						) : (
-							'暂无QQ数据'
+							// '暂无QQ数据'
+							''
 						)}
 						{WBInfo.value.length !== 0 ? (
 							<DrawerWB info={WBInfo.value} />
 						) : (
-							'暂无WB数据'
+							// '暂无WB数据'
+							''
 						)}
 						{ZJInfo.value.length !== 0 ? (
 							<DrawerZJ info={ZJInfo.value} />
 						) : (
-							'暂无WB数据'
+							// '暂无WB数据'
+							''
 						)}
 						{WKInfo.value.length !== 0 ? (
 							<DrawerWK info={WKInfo.value} />
 						) : (
-							'暂无WB数据'
+							// '暂无WK数据'
+							''
 						)}
 					</ElDrawer>
 				</div>
