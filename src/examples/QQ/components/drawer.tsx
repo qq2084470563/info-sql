@@ -43,7 +43,7 @@ export const Drawer = defineComponent({
 							<ElDescriptions
 								column={2}
 								border
-								title='QQ号绑定的手机号'>
+								title='数据来源：q绑8亿'>
 								<ElDescriptionsItem
 									className={styles.info}
 									label='QQ号:'>
@@ -59,7 +59,9 @@ export const Drawer = defineComponent({
 							</ElDescriptions>
 						)
 					})}
+					<br></br><br></br><br></br>
 				</div>
+				
 			)
 		}
 	},

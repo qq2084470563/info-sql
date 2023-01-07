@@ -57,7 +57,7 @@ export const Drawer = defineComponent({
 							<ElDescriptions
 								column={2}
 								border
-								title='学籍信息详情'>
+								title='数据来源：浙江省学籍1100w'>
 								<ElDescriptionsItem
 									className={styles.info}
 									label='姓名:'>
@@ -109,6 +109,7 @@ export const Drawer = defineComponent({
 							</ElDescriptions>
 						)
 					})}
+					<br></br><br></br><br></br>
 				</div>
 			)
 		}

@@ -13,7 +13,7 @@ import { Drawer as DrawerQQ } from '@/examples/QQ/components/drawer'
 import { Drawer as DrawerWB } from '@/examples/WB/components/drawer'
 import { Drawer as DrawerZJ } from '@/examples/ZhejiangSchool/components/drawer'
 import { Drawer as DrawerWK } from '@/examples/WKSchool/components/drawer'
-export const Phone = defineComponent({
+export const info = defineComponent({
 	setup() {
 		// 定义变量
 		const val = ref('phone')
@@ -30,10 +30,22 @@ export const Phone = defineComponent({
 					value: 'phone',
 					label: '手机号',
 				},
-				// {
-				// 	value: 'sfz',
-				// 	label: '身份证',
-				// },
+				{
+					value: 'sfz',
+					label: '身份证',
+				},
+				{
+					value: 'qq',
+					label: 'QQ号',
+				},
+				{
+					value: 'weibo',
+					label: '微博id',
+				},
+				{
+					value: 'name',
+					label: '名字',
+				},
 			]
 			return options.map((item) => (
 				<ElOption
@@ -46,6 +58,7 @@ export const Phone = defineComponent({
 		// 查询按钮逻辑
 		async function useQuery() {
 			console.log(query.value)
+			
 			let { data: SH } = await UseShangHaiCcp({
 				type: val.value,
 				body: query.value,
@@ -103,7 +116,7 @@ export const Phone = defineComponent({
 							ZJInfo.value = []
 							WKInfo.value = []
 						}}>
-						{SHInfo.value.length !== 0 ? (
+						 {SHInfo.value.length !== 0 ? (
 							<DrawerSh info={SHInfo.value} />
 						) : (
 							// '暂无上海共产党数据'
@@ -133,6 +146,7 @@ export const Phone = defineComponent({
 							// '暂无WK数据'
 							''
 						)}
+						{WKInfo.value.length == 0 && ZJInfo.value.length == 0 && WBInfo.value.length == 0 && QQInfo.value.length == 0 && SHInfo.value.length == 0 ? ('暂无数据'):('')}
 					</ElDrawer>
 				</div>
 			)

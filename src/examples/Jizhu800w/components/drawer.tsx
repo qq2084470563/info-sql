@@ -43,22 +43,22 @@ export const Drawer = defineComponent({
 							<ElDescriptions
 								column={2}
 								border
-								title='数据来源：微博5亿'>
+								title='数据来源：800w机主'>
 								<ElDescriptionsItem
 									className={styles.info}
-									label='微博UID:'>
-									<a
-										href={
-											'http://www.weibo.com/' + item.wbUid
-										}
-										target='_blank'
-										onContextmenu={copy}>
-										{item.wbUid}
-									</a>
+									label='姓名:'>
+									<span onContextmenu={copy}>{item.qq}</span>
 								</ElDescriptionsItem>
 								<ElDescriptionsItem
 									className={styles.info}
 									label='手机号:'>
+									<span onContextmenu={copy}>
+										{item.phone}
+									</span>
+								</ElDescriptionsItem>
+								<ElDescriptionsItem
+									className={styles.info}
+									label='住址:'>
 									<span onContextmenu={copy}>
 										{item.phone}
 									</span>
@@ -68,6 +68,7 @@ export const Drawer = defineComponent({
 					})}
 					<br></br><br></br><br></br>
 				</div>
+				
 			)
 		}
 	},

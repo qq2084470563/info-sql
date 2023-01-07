@@ -46,3 +46,12 @@ export const UseShangHaiCcp = (data: any = {}) => {
 		headers: { 'content-type': 'application/x-www-form-urlencoded' },
 	})
 }
+// 800w机主
+export const UseJizhu800w = (data: any = {}) => {
+	return request({
+		url: '/search/800wjizhu',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}

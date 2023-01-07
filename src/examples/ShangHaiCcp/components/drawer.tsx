@@ -43,7 +43,7 @@ export const Drawer = defineComponent({
 							<ElDescriptions
 								column={2}
 								border
-								title='微博UID绑定的手机号'>
+								title='数据来源：上海共产党员200万'>
 								<ElDescriptionsItem
 									className={styles.info}
 									label='姓名:'>
@@ -107,6 +107,7 @@ export const Drawer = defineComponent({
 							</ElDescriptions>
 						)
 					})}
+					<br></br><br></br><br></br>
 				</div>
 			)
 		}
