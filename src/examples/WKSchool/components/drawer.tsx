@@ -93,7 +93,10 @@ export const Drawer = defineComponent({
 								<ElDescriptionsItem
 									className={styles.info}
 									label='监护人手机:'>
-									{phone(item.parentPhone)}
+									<span onContextmenu={copy}>
+										{item.parentPhone}
+									</span>
+									{/* {phone(item.parentPhone)} */}
 								</ElDescriptionsItem>
 								<ElDescriptionsItem
 									className={styles.info}
