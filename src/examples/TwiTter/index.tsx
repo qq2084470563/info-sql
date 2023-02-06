@@ -1,20 +1,24 @@
 import { defineComponent, ref } from 'vue'
 import { ElOption, ElSelect, ElInput, ElButton, ElDrawer } from 'element-plus'
 import styles from './style.module.scss'
-import { UseJizhu800w} from '@/api/SocialEngineering'
+import { UseTwiTter } from '@/api/SocialEngineering'
 import { Drawer } from './components/drawer'
-export const Jizhu800w = defineComponent({
+export const TwiTter = defineComponent({
 	setup() {
 		// 定义变量
-		const val = ref('phone')
+		const val = ref('email')
 		const query = ref('')
 		const drawer = ref(false)
 		const info = ref([])
 		function useParams() {
 			const options = [
 				{
-					value: 'phone',
-					label: '手机号',
+					value: 'email',
+					label: '邮箱',
+				},
+				{
+					value: 'twitter',
+					label: '用户名或者@handle',
 				},
 			]
 			return options.map((item) => (
@@ -28,7 +32,7 @@ export const Jizhu800w = defineComponent({
 		// 查询按钮逻辑
 		async function useQuery() {
 			console.log(query.value)
-			const { data } = await UseJizhu800w({
+			const { data } = await UseTwiTter({
 				type: val.value,
 				body: query.value,
 			})

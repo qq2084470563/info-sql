@@ -7,12 +7,27 @@ import {
 	UseWB,
 	UseZhejiangSchool,
 	UseWK,
+	UseJizhu800w,
+	UseTwiTter,
+	UseHunanSchool,
+	UseG2700w,
+	UseKFC,
+	UseLOL,
+
 } from '@/api/SocialEngineering'
 import { Drawer as DrawerSh } from '@/examples/ShangHaiCcp/components/drawer'
 import { Drawer as DrawerQQ } from '@/examples/QQ/components/drawer'
 import { Drawer as DrawerWB } from '@/examples/WB/components/drawer'
 import { Drawer as DrawerZJ } from '@/examples/ZhejiangSchool/components/drawer'
 import { Drawer as DrawerWK } from '@/examples/WKSchool/components/drawer'
+import { Drawer as DrawerJZ } from '@/examples/Jizhu800w/components/drawer'
+import { Drawer as DrawerTW } from '@/examples/TwiTter/components/drawer'
+import { Drawer as DrawerHN } from '@/examples/HunanSchool/components/drawer'
+import { Drawer as DrawerG2 } from '@/examples/G2700w/components/drawer'
+import { Drawer as DrawerKF } from '@/examples/KFC/components/drawer'
+import { Drawer as DrawerLO } from '@/examples/LOL/components/drawer'
+
+
 export const info = defineComponent({
 	setup() {
 		// 定义变量
@@ -24,6 +39,13 @@ export const info = defineComponent({
 		const WBInfo = ref([])
 		const ZJInfo = ref([])
 		const WKInfo = ref([])
+		const JZInfo = ref([])
+		const TWInfo = ref([])
+		const HNInfo = ref([])
+		const G2Info = ref([])
+		const KFInfo = ref([])
+		const LOInfo = ref([])
+
 		function useParams() {
 			const options = [
 				{
@@ -45,6 +67,18 @@ export const info = defineComponent({
 				{
 					value: 'name',
 					label: '名字',
+				},
+				{
+					value: 'email',
+					label: '邮箱',
+				},
+				{
+					value: 'twitter',
+					label: 'twitter用户名或者@handle',
+				},
+				{
+					value: 'lol',
+					label: 'lol用户名',
 				},
 			]
 			return options.map((item) => (
@@ -79,12 +113,43 @@ export const info = defineComponent({
 				type: val.value,
 				body: query.value,
 			})
+			let { data: JZ } = await UseJizhu800w({
+				type: val.value,
+				body: query.value,
+			})
+			let { data: TW } = await UseTwiTter({
+				type: val.value,
+				body: query.value,
+			})
+			let { data: HN } = await UseHunanSchool({
+				type: val.value,
+				body: query.value,
+			})
+			let { data: G2 } = await UseG2700w({
+				type: val.value,
+				body: query.value,
+			})
+			let { data: KF } = await UseKFC({
+				type: val.value,
+				body: query.value,
+			})
+			let { data: LO } = await UseLOL({
+				type: val.value,
+				body: query.value,
+			})
+
 			console.log(QQ)
 			SHInfo.value = SH
 			QQInfo.value = QQ
 			WBInfo.value = WB
 			ZJInfo.value = ZJ
 			WKInfo.value = WK
+			JZInfo.value = JZ
+			HNInfo.value = HN
+			TWInfo.value = TW
+			G2Info.value = G2
+			KFInfo.value = KF
+			LOInfo.value = LO
 			drawer.value = true
 		}
 
@@ -115,6 +180,13 @@ export const info = defineComponent({
 							WBInfo.value = []
 							ZJInfo.value = []
 							WKInfo.value = []
+							JZInfo.value = []
+							HNInfo.value = []
+							TWInfo.value = []
+							G2Info.value = []
+							KFInfo.value = []
+							LOInfo.value = []
+							
 						}}>
 						 {SHInfo.value.length !== 0 ? (
 							<DrawerSh info={SHInfo.value} />
@@ -146,7 +218,37 @@ export const info = defineComponent({
 							// '暂无WK数据'
 							''
 						)}
-						{WKInfo.value.length == 0 && ZJInfo.value.length == 0 && WBInfo.value.length == 0 && QQInfo.value.length == 0 && SHInfo.value.length == 0 ? ('暂无数据'):('')}
+						{JZInfo.value.length !== 0 ? (
+							<DrawerJZ info={JZInfo.value} />
+						) : (
+							''
+						)}
+						{HNInfo.value.length !== 0 ? (
+							<DrawerHN info={HNInfo.value} />
+						) : (
+							''
+						)}
+						{TWInfo.value.length !== 0 ? (
+							<DrawerTW info={TWInfo.value} />
+						) : (
+							''
+						)}
+						{G2Info.value.length !== 0 ? (
+							<DrawerG2 info={G2Info.value} />
+						) : (
+							''
+						)}
+						{G2Info.value.length !== 0 ? (
+							<DrawerKF info={KFInfo.value} />
+						) : (
+							''
+						)}
+						{LOInfo.value.length !== 0 ? (
+							<DrawerLO info={LOInfo.value} />
+						) : (
+							''
+						)}
+						{WKInfo.value.length == 0 && ZJInfo.value.length == 0 && WBInfo.value.length == 0 && QQInfo.value.length == 0 && SHInfo.value.length == 0 && JZInfo.value.length == 0 && HNInfo.value.length == 0 && TWInfo.value.length == 0 && G2Info.value.length == 0 && LOInfo.value.length == 0 ? ('暂无数据'):('')}
 					</ElDrawer>
 				</div>
 			)

@@ -43,24 +43,24 @@ export const Drawer = defineComponent({
 							<ElDescriptions
 								column={2}
 								border
-								title='数据来源：800w机主'>
+								title='数据来源：lol_bind'>
 								<ElDescriptionsItem
 									className={styles.info}
-									label='姓名:'>
-									<span onContextmenu={copy}>{item.name}</span>
+									label='QQ号:'>
+									<span onContextmenu={copy}>{item.qq}</span>
 								</ElDescriptionsItem>
 								<ElDescriptionsItem
 									className={styles.info}
-									label='手机号:'>
+									label='区服:'>
 									<span onContextmenu={copy}>
-										{item.phone}
+										{item.area}
 									</span>
 								</ElDescriptionsItem>
 								<ElDescriptionsItem
 									className={styles.info}
-									label='住址:'>
+									label='用户名:'>
 									<span onContextmenu={copy}>
-										{item.address}
+										{item.username}
 									</span>
 								</ElDescriptionsItem>
 							</ElDescriptions>

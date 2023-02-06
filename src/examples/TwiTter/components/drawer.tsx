@@ -43,24 +43,48 @@ export const Drawer = defineComponent({
 							<ElDescriptions
 								column={2}
 								border
-								title='数据来源：800w机主'>
+								title='数据来源：推特'>
 								<ElDescriptionsItem
 									className={styles.info}
-									label='姓名:'>
-									<span onContextmenu={copy}>{item.name}</span>
+									label='用户名:'
+									span={2}>
+									<span onContextmenu={copy}>
+										{item.username}
+									</span>
+								</ElDescriptionsItem>
+
+								<ElDescriptionsItem
+									className={styles.info}
+									label='@handle:'>
+									<a
+										href={
+											'https://twitter.com/' + item.handle
+										}
+										target='_blank'
+										onContextmenu={copy}>
+										{item.handle}
+									</a>
 								</ElDescriptionsItem>
 								<ElDescriptionsItem
 									className={styles.info}
-									label='手机号:'>
+									label='关注者:'>
 									<span onContextmenu={copy}>
-										{item.phone}
+										{item.fans}
 									</span>
 								</ElDescriptionsItem>
 								<ElDescriptionsItem
 									className={styles.info}
-									label='住址:'>
+									label='注册时间:'
+									span={2}>
 									<span onContextmenu={copy}>
-										{item.address}
+										{item.time}
+									</span>
+								</ElDescriptionsItem>
+								<ElDescriptionsItem
+									className={styles.info}
+									label='email:'>
+									<span onContextmenu={copy}>
+										{item.email}
 									</span>
 								</ElDescriptionsItem>
 							</ElDescriptions>
@@ -68,7 +92,6 @@ export const Drawer = defineComponent({
 					})}
 					<br></br><br></br><br></br>
 				</div>
-				
 			)
 		}
 	},

@@ -55,3 +55,53 @@ export const UseJizhu800w = (data: any = {}) => {
 		headers: { 'content-type': 'application/x-www-form-urlencoded' },
 	})
 }
+
+// 湖南学籍159w
+export const UseHunanSchool = (data: any = {}) => {
+	return request({
+		url: '/search/hunanstudent',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+// 推特
+export const UseTwiTter = (data: any = {}) => {
+	return request({
+		url: '/search/twitter',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+// 2700w
+export const UseG2700w = (data: any = {}) => {
+	return request({
+		url: '/search/2700w',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+// kfc 500w
+export const UseKFC = (data: any = {}) => {
+	return request({
+		url: '/search/kfc',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+// lol_bind
+export const UseLOL = (data: any = {}) => {
+	return request({
+		url: '/search/lol',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}

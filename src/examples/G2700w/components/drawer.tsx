@@ -43,7 +43,7 @@ export const Drawer = defineComponent({
 							<ElDescriptions
 								column={2}
 								border
-								title='数据来源：800w机主'>
+								title='数据来源：2700w购买数据'>
 								<ElDescriptionsItem
 									className={styles.info}
 									label='姓名:'>
@@ -51,7 +51,15 @@ export const Drawer = defineComponent({
 								</ElDescriptionsItem>
 								<ElDescriptionsItem
 									className={styles.info}
-									label='手机号:'>
+									label='性别:'>
+									<span onContextmenu={copy}>
+										{item.sex == 'M' ? ('男'):('女')}
+									</span>
+								</ElDescriptionsItem>
+								<ElDescriptionsItem
+									className={styles.info}
+									label='手机号:'
+									span={2}>
 									<span onContextmenu={copy}>
 										{item.phone}
 									</span>

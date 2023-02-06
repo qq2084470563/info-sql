@@ -1,20 +1,28 @@
 import { defineComponent, ref } from 'vue'
 import { ElOption, ElSelect, ElInput, ElButton, ElDrawer } from 'element-plus'
 import styles from './style.module.scss'
-import { UseJizhu800w} from '@/api/SocialEngineering'
+import { UseHunanSchool } from '@/api/SocialEngineering'
 import { Drawer } from './components/drawer'
-export const Jizhu800w = defineComponent({
+export const HunanSchool = defineComponent({
 	setup() {
 		// 定义变量
-		const val = ref('phone')
+		const val = ref('name')
 		const query = ref('')
 		const drawer = ref(false)
 		const info = ref([])
 		function useParams() {
 			const options = [
 				{
+					value: 'name',
+					label: '名字',
+				},
+				{
+					value: 'sfz',
+					label: '身份证',
+				},
+				{
 					value: 'phone',
-					label: '手机号',
+					label: '手机',
 				},
 			]
 			return options.map((item) => (
@@ -28,11 +36,10 @@ export const Jizhu800w = defineComponent({
 		// 查询按钮逻辑
 		async function useQuery() {
 			console.log(query.value)
-			const { data } = await UseJizhu800w({
+			const { data } = await UseHunanSchool({
 				type: val.value,
 				body: query.value,
 			})
-
 			info.value = data
 			console.log(data)
 			drawer.value = true
