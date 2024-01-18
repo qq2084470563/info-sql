@@ -105,3 +105,13 @@ export const UseLOL = (data: any = {}) => {
 		headers: { 'content-type': 'application/x-www-form-urlencoded' },
 	})
 }
+
+// 上海10亿
+export const UseShangHai10e = (data: any = {}) => {
+	return request({
+		url: '/search/shanghai10e',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}

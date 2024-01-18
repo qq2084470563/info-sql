@@ -13,6 +13,7 @@ import {
 	UseG2700w,
 	UseKFC,
 	UseLOL,
+	UseShangHai10e,
 
 } from '@/api/SocialEngineering'
 import { Drawer as DrawerSh } from '@/examples/ShangHaiCcp/components/drawer'
@@ -26,6 +27,7 @@ import { Drawer as DrawerHN } from '@/examples/HunanSchool/components/drawer'
 import { Drawer as DrawerG2 } from '@/examples/G2700w/components/drawer'
 import { Drawer as DrawerKF } from '@/examples/KFC/components/drawer'
 import { Drawer as DrawerLO } from '@/examples/LOL/components/drawer'
+import { Drawer as DrawerSH2 } from '@/examples/ShangHai10e/components/drawer'
 
 
 export const info = defineComponent({
@@ -45,6 +47,7 @@ export const info = defineComponent({
 		const G2Info = ref([])
 		const KFInfo = ref([])
 		const LOInfo = ref([])
+		const SH2Info = ref([])
 
 		function useParams() {
 			const options = [
@@ -94,6 +97,10 @@ export const info = defineComponent({
 			console.log(query.value)
 			
 			let { data: SH } = await UseShangHaiCcp({
+				type: val.value,
+				body: query.value,
+			})
+			let { data: SH2 } = await UseShangHai10e({
 				type: val.value,
 				body: query.value,
 			})
@@ -150,6 +157,7 @@ export const info = defineComponent({
 			G2Info.value = G2
 			KFInfo.value = KF
 			LOInfo.value = LO
+			SH2Info.value = SH2
 			drawer.value = true
 		}
 
@@ -186,6 +194,7 @@ export const info = defineComponent({
 							G2Info.value = []
 							KFInfo.value = []
 							LOInfo.value = []
+							SH2Info.value = []
 							
 						}}>
 						 {SHInfo.value.length !== 0 ? (
@@ -248,7 +257,13 @@ export const info = defineComponent({
 						) : (
 							''
 						)}
-						{WKInfo.value.length == 0 && ZJInfo.value.length == 0 && WBInfo.value.length == 0 && QQInfo.value.length == 0 && SHInfo.value.length == 0 && JZInfo.value.length == 0 && HNInfo.value.length == 0 && TWInfo.value.length == 0 && G2Info.value.length == 0 && LOInfo.value.length == 0 ? ('暂无数据'):('')}
+						{SH2Info.value.length !== 0 ? (
+							<DrawerSH2 info={SH2Info.value} />
+						) : (
+							''
+						)}
+
+						{WKInfo.value.length == 0 && ZJInfo.value.length == 0 && WBInfo.value.length == 0 && QQInfo.value.length == 0 && SHInfo.value.length == 0 && JZInfo.value.length == 0 && HNInfo.value.length == 0 && TWInfo.value.length == 0 && G2Info.value.length == 0 && LOInfo.value.length == 0 && SH2Info.value.length == 0 ? ('暂无数据'):('')}
 					</ElDrawer>
 				</div>
 			)
