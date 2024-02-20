@@ -95,7 +95,7 @@ export const info = defineComponent({
 		// 查询按钮逻辑
 		async function useQuery() {
 			console.log(query.value)
-			
+			drawer.value = true
 			let { data: SH } = await UseShangHaiCcp({
 				type: val.value,
 				body: query.value,
@@ -179,7 +179,7 @@ export const info = defineComponent({
 							placeholder='请输入相关信息进行查询'></ElInput>
 					</div>
 					<ElButton onClick={useQuery}>查询</ElButton>
-					<ElDrawer
+					<ElDrawer direction= {window.innerWidth<window.innerHeight?'btt':'rtl'}
 						modelValue={drawer.value}
 						onClose={() => {
 							drawer.value = false

@@ -26,6 +26,8 @@ Promise.all(examplePromises).then((list) => {
 			})
 		}
 	}
+	console.log(routes);
+	
 	routes.push({
 		path: '/',
 		redirect: routes[0]?.path,
