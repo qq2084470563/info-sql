@@ -95,7 +95,7 @@ export const info = defineComponent({
 		// 查询按钮逻辑
 		async function useQuery() {
 			console.log(query.value)
-			drawer.value = true
+			// drawer.value = true
 			let { data: SH } = await UseShangHaiCcp({
 				type: val.value,
 				body: query.value,
