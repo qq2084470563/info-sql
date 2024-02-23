@@ -14,6 +14,31 @@ import {
 	UseKFC,
 	UseLOL,
 	UseShangHai10e,
+	UseChinamobile,
+	UseChinaunionpay,
+	UseDidi,
+	UseEryaosu8_19e,
+	UseGuangdong2,
+	UseGuangdong3,
+	UseHebei2,
+	UseHenan2,
+	UseHenan3,
+	UseHunan2,
+	UseJiangsu2,
+	UseJingdong,
+	UseMomo3100w,
+	UseOrder,
+	UsePeople,
+	UseSiyaosu1_48e,
+	UseSanyaosu1_73e,
+	UseShandong2,
+	UseShanxi2,
+	UseSongguo8000w,
+	UseWeizhi1,
+	UseWxid,
+	UseXuexitong,
+	UseYuantong,
+	UseZhifubao,
 
 } from '@/api/SocialEngineering'
 import { Drawer as DrawerSh } from '@/examples/ShangHaiCcp/components/drawer'
@@ -28,6 +53,32 @@ import { Drawer as DrawerG2 } from '@/examples/G2700w/components/drawer'
 import { Drawer as DrawerKF } from '@/examples/KFC/components/drawer'
 import { Drawer as DrawerLO } from '@/examples/LOL/components/drawer'
 import { Drawer as DrawerSH2 } from '@/examples/ShangHai10e/components/drawer'
+import { Drawer as DrawerCM } from '@/examples/Chinamobile/components/drawer'
+import { Drawer as DrawerCU } from '@/examples/Chinaunionpay/components/drawer'
+import { Drawer as DrawerDD } from '@/examples/Didi/components/drawer'
+import { Drawer as DrawerEY } from '@/examples/Eryaosu8.19e/components/drawer'
+import { Drawer as DrawerGD2 } from '@/examples/Guangdong2/components/drawer'
+import { Drawer as DrawerGD3 } from '@/examples/Guangdong3/components/drawer'
+import { Drawer as DrawerHB } from '@/examples/Hebei2/components/drawer'
+import { Drawer as DrawerHN2 } from '@/examples/Henan2/components/drawer'
+import { Drawer as DrawerHN3 } from '@/examples/Henan3/components/drawer'
+import { Drawer as DrawerHN22 } from '@/examples/Hunan2/components/drawer'
+import { Drawer as DrawerJS } from '@/examples/Jiangsu2/components/drawer'
+import { Drawer as DrawerJD } from '@/examples/Jingdong/components/drawer'
+import { Drawer as DrawerMM } from '@/examples/Momo3100w/components/drawer'
+import { Drawer as DrawerOR } from '@/examples/Order/components/drawer'
+import { Drawer as DrawerPE } from '@/examples/People/components/drawer'
+import { Drawer as DrawerSY } from '@/examples/Sanyaosu1.73e/components/drawer'
+import { Drawer as DrawerSD } from '@/examples/Shandong2/components/drawer'
+import { Drawer as DrawerSX } from '@/examples/Shanxi2/components/drawer'
+import { Drawer as DrawerSY4 } from '@/examples/Siyaosu1.48e/components/drawer'
+import { Drawer as DrawerSG } from '@/examples/Songguo8000w/components/drawer'
+import { Drawer as DrawerWZ } from '@/examples/Weizhi1/components/drawer'
+import { Drawer as DrawerWX } from '@/examples/Wxid/components/drawer'
+import { Drawer as DrawerXX } from '@/examples/Xuexitong/components/drawer'
+import { Drawer as DrawerYT } from '@/examples/Yuantong/components/drawer'
+import { Drawer as DrawerZF } from '@/examples/Zhifubao/components/drawer'
+
 
 
 export const info = defineComponent({
@@ -48,6 +99,31 @@ export const info = defineComponent({
 		const KFInfo = ref([])
 		const LOInfo = ref([])
 		const SH2Info = ref([])
+		const CMInfo = ref([])
+		const CUInfo = ref([])
+		const DDInfo = ref([])
+		const EYInfo = ref([])
+		const GD2Info = ref([])
+		const GD3Info = ref([])
+		const HBInfo = ref([])
+		const HN2Info = ref([])
+		const HN3Info = ref([])
+		const HN22Info = ref([])
+		const JSInfo = ref([])
+		const JDInfo = ref([])
+		const MMInfo = ref([])
+		const ORInfo = ref([])
+		const PEInfo = ref([])
+		const SYInfo = ref([])
+		const SDInfo = ref([])
+		const SXInfo = ref([])
+		const SY4Info = ref([])
+		const SGInfo = ref([])
+		const WZInfo = ref([])
+		const WXInfo = ref([])
+		const XXInfo = ref([])
+		const YTInfo = ref([])
+		const ZFInfo = ref([])
 
 		function useParams() {
 			const options = [
@@ -69,19 +145,23 @@ export const info = defineComponent({
 				},
 				{
 					value: 'name',
-					label: '名字',
+					label: '名字（慎用）',
+				},
+				{
+					value: 'wxid',
+					label: '微信id',
+				},
+				{
+					value: 'username',
+					label: '用户名',
+				},
+				{
+					value: 'address',
+					label: '住址（慎用）',
 				},
 				{
 					value: 'email',
 					label: '邮箱',
-				},
-				{
-					value: 'twitter',
-					label: 'twitter用户名或者@handle',
-				},
-				{
-					value: 'lol',
-					label: 'lol用户名',
 				},
 			]
 			return options.map((item) => (
@@ -144,6 +224,131 @@ export const info = defineComponent({
 				type: val.value,
 				body: query.value,
 			})
+			let { data: CM } = await UseChinamobile({
+				type: val.value,
+				body: query.value,
+			})
+			let { data: CU } = await UseChinaunionpay({
+				type: val.value,
+				body: query.value,
+			})
+			
+			let { data: DD } = await UseDidi({
+				type: val.value,
+				body: query.value,
+			})
+			
+			let { data: EY } = await UseEryaosu8_19e({
+				type: val.value,
+				body: query.value,
+			})
+			
+			let { data: GD2 } = await UseGuangdong2({
+				type: val.value,
+				body: query.value,
+			})
+			
+			let { data: GD3 } = await UseGuangdong3({
+				type: val.value,
+				body: query.value,
+			})
+			
+			let { data: HB } = await UseHebei2({
+				type: val.value,
+				body: query.value,
+			})
+			
+			let { data: HN2 } = await UseHenan2({
+				type: val.value,
+				body: query.value,
+			})
+			
+			let { data: HN3 } = await UseHenan3({
+				type: val.value,
+				body: query.value,
+			})
+			
+			let { data: HN22 } = await UseHunan2({
+				type: val.value,
+				body: query.value,
+			})
+			
+			let { data: JS } = await UseJiangsu2({
+				type: val.value,
+				body: query.value,
+			})
+			
+			let { data: JD } = await UseJingdong({
+				type: val.value,
+				body: query.value,
+			})
+			
+			let { data: MM } = await UseMomo3100w({
+				type: val.value,
+				body: query.value,
+			})
+			
+			let { data: OR } = await UseOrder({
+				type: val.value,
+				body: query.value,
+			})
+			
+			let { data: PE } = await UsePeople({
+				type: val.value,
+				body: query.value,
+			})
+			
+			let { data: SY } = await UseSanyaosu1_73e({
+				type: val.value,
+				body: query.value,
+			})
+			
+			let { data: SD } = await UseShandong2({
+				type: val.value,
+				body: query.value,
+			})
+			
+			let { data: SX } = await UseShanxi2({
+				type: val.value,
+				body: query.value,
+			})
+			
+			let { data: SY4 } = await UseSiyaosu1_48e({
+				type: val.value,
+				body: query.value,
+			})
+			
+			let { data: SG } = await UseSongguo8000w({
+				type: val.value,
+				body: query.value,
+			})
+			
+			let { data: WZ } = await UseWeizhi1({
+				type: val.value,
+				body: query.value,
+			})
+			
+			let { data: WX } = await UseWxid({
+				type: val.value,
+				body: query.value,
+			})
+			
+			let { data: XX } = await UseXuexitong({
+				type: val.value,
+				body: query.value,
+			})
+			
+			let { data: YT } = await UseYuantong({
+				type: val.value,
+				body: query.value,
+			})
+			
+			let { data: ZF } = await UseZhifubao({
+				type: val.value,
+				body: query.value,
+			})
+
+
 
 			console.log(QQ)
 			SHInfo.value = SH
@@ -158,6 +363,32 @@ export const info = defineComponent({
 			KFInfo.value = KF
 			LOInfo.value = LO
 			SH2Info.value = SH2
+			CMInfo.value = CM
+			CUInfo.value = CU
+			DDInfo.value = DD
+			EYInfo.value = EY
+			GD2Info.value = GD2
+			GD3Info.value = GD3
+			HBInfo.value = HB
+			HN2Info.value = HN2
+			HN3Info.value = HN3
+			HN22Info.value = HN22
+			JSInfo.value = JS
+			JDInfo.value = JD
+			MMInfo.value = MM
+			ORInfo.value = OR
+			PEInfo.value = PE
+			SYInfo.value = SY
+			SDInfo.value = SD
+			SXInfo.value = SX
+			SY4Info.value = SY4
+			SGInfo.value = SG
+			WZInfo.value = WZ
+			WXInfo.value = WX
+			XXInfo.value = XX
+			YTInfo.value = YT
+			ZFInfo.value = ZF
+
 			drawer.value = true
 		}
 
@@ -179,7 +410,7 @@ export const info = defineComponent({
 							placeholder='请输入相关信息进行查询'></ElInput>
 					</div>
 					<ElButton onClick={useQuery}>查询</ElButton>
-					<ElDrawer direction= {window.innerWidth<window.innerHeight?'btt':'rtl'}
+					<ElDrawer direction= {window.innerWidth<window.innerHeight?'btt':'rtl'} size="80%"
 						modelValue={drawer.value}
 						onClose={() => {
 							drawer.value = false
@@ -195,7 +426,32 @@ export const info = defineComponent({
 							KFInfo.value = []
 							LOInfo.value = []
 							SH2Info.value = []
-							
+							CMInfo.value = []
+							CUInfo.value = []
+							DDInfo.value = []
+							EYInfo.value = []
+							GD2Info.value = []
+							GD3Info.value = []
+							HBInfo.value = []
+							HN2Info.value = []
+							HN3Info.value = []
+							HN22Info.value = []
+							JSInfo.value = []
+							JDInfo.value = []
+							MMInfo.value = []
+							ORInfo.value = []
+							PEInfo.value = []
+							SYInfo.value = []
+							SDInfo.value = []
+							SXInfo.value = []
+							SY4Info.value = []
+							SGInfo.value = []
+							WZInfo.value = []
+							WXInfo.value = []
+							XXInfo.value = []
+							YTInfo.value = []
+							ZFInfo.value = []
+
 						}}>
 						 {SHInfo.value.length !== 0 ? (
 							<DrawerSh info={SHInfo.value} />
@@ -262,10 +518,196 @@ export const info = defineComponent({
 						) : (
 							''
 						)}
+						{CMInfo.value.length !== 0 ? (
+							<DrawerCM info={CMInfo.value} />
+						) : (
+							''
+						)}
+						{CUInfo.value.length !== 0 ? (
+							<DrawerCU info={CUInfo.value} />
+						) : (
+							''
+						)}
 
-						{WKInfo.value.length == 0 && ZJInfo.value.length == 0 && WBInfo.value.length == 0 && QQInfo.value.length == 0 && SHInfo.value.length == 0 && JZInfo.value.length == 0 && HNInfo.value.length == 0 && TWInfo.value.length == 0 && G2Info.value.length == 0 && LOInfo.value.length == 0 && SH2Info.value.length == 0 ? ('暂无数据'):('')}
+						{DDInfo.value.length !== 0 ? (
+							<DrawerDD info={DDInfo.value} />
+						) : (
+							''
+						)}
+
+						{EYInfo.value.length !== 0 ? (
+							<DrawerEY info={EYInfo.value} />
+						) : (
+							''
+						)}
+
+						{GD2Info.value.length !== 0 ? (
+							<DrawerGD2 info={GD2Info.value} />
+						) : (
+							''
+						)}
+
+						{GD3Info.value.length !== 0 ? (
+							<DrawerGD3 info={GD3Info.value} />
+						) : (
+							''
+						)}
+
+						{HBInfo.value.length !== 0 ? (
+							<DrawerHB info={HBInfo.value} />
+						) : (
+							''
+						)}
+
+						{HN2Info.value.length !== 0 ? (
+							<DrawerHN2 info={HN2Info.value} />
+						) : (
+							''
+						)}
+
+						{HN3Info.value.length !== 0 ? (
+							<DrawerHN3 info={HN3Info.value} />
+						) : (
+							''
+						)}
+
+						{HN22Info.value.length !== 0 ? (
+							<DrawerHN22 info={HN22Info.value} />
+						) : (
+							''
+						)}
+
+						{JSInfo.value.length !== 0 ? (
+							<DrawerJS info={JSInfo.value} />
+						) : (
+							''
+						)}
+
+						{JDInfo.value.length !== 0 ? (
+							<DrawerJD info={JDInfo.value} />
+						) : (
+							''
+						)}
+
+						{MMInfo.value.length !== 0 ? (
+							<DrawerMM info={MMInfo.value} />
+						) : (
+							''
+						)}
+
+						{ORInfo.value.length !== 0 ? (
+							<DrawerOR info={ORInfo.value} />
+						) : (
+							''
+						)}
+
+						{PEInfo.value.length !== 0 ? (
+							<DrawerPE info={PEInfo.value} />
+						) : (
+							''
+						)}
+
+						{SYInfo.value.length !== 0 ? (
+							<DrawerSY info={SYInfo.value} />
+						) : (
+							''
+						)}
+
+						{SDInfo.value.length !== 0 ? (
+							<DrawerSD info={SDInfo.value} />
+						) : (
+							''
+						)}
+
+						{SXInfo.value.length !== 0 ? (
+							<DrawerSX info={SXInfo.value} />
+						) : (
+							''
+						)}
+
+						{SY4Info.value.length !== 0 ? (
+							<DrawerSY4 info={SY4Info.value} />
+						) : (
+							''
+						)}
+
+						{SGInfo.value.length !== 0 ? (
+							<DrawerSG info={SGInfo.value} />
+						) : (
+							''
+						)}
+
+						{WZInfo.value.length !== 0 ? (
+							<DrawerWZ info={WZInfo.value} />
+						) : (
+							''
+						)}
+
+						{WXInfo.value.length !== 0 ? (
+							<DrawerWX info={WXInfo.value} />
+						) : (
+							''
+						)}
+
+						{XXInfo.value.length !== 0 ? (
+							<DrawerXX info={XXInfo.value} />
+						) : (
+							''
+						)}
+
+						{YTInfo.value.length !== 0 ? (
+							<DrawerYT info={YTInfo.value} />
+						) : (
+							''
+						)}
+
+						{ZFInfo.value.length !== 0 ? (
+							<DrawerZF info={ZFInfo.value} />
+						) : (
+							''
+						)}
+
+
+						{WKInfo.value.length === 0 &&
+						ZJInfo.value.length === 0 &&
+						WBInfo.value.length === 0 &&
+						QQInfo.value.length === 0 &&
+						SHInfo.value.length === 0 &&
+						JZInfo.value.length === 0 &&
+						HNInfo.value.length === 0 &&
+						TWInfo.value.length === 0 &&
+						G2Info.value.length === 0 &&
+						LOInfo.value.length === 0 &&
+						SH2Info.value.length === 0 &&
+						CMInfo.value.length === 0 &&
+						CUInfo.value.length === 0 &&
+						DDInfo.value.length === 0 &&
+						EYInfo.value.length === 0 &&
+						GD2Info.value.length === 0 &&
+						GD3Info.value.length === 0 &&
+						HBInfo.value.length === 0 &&
+						HN2Info.value.length === 0 &&
+						HN3Info.value.length === 0 &&
+						HN22Info.value.length === 0 &&
+						JSInfo.value.length === 0 &&
+						JDInfo.value.length === 0 &&
+						MMInfo.value.length === 0 &&
+						ORInfo.value.length === 0 &&
+						PEInfo.value.length === 0 &&
+						SYInfo.value.length === 0 &&
+						SDInfo.value.length === 0 &&
+						SXInfo.value.length === 0 &&
+						SY4Info.value.length === 0 &&
+						SGInfo.value.length === 0 &&
+						WZInfo.value.length === 0 &&
+						WXInfo.value.length === 0 &&
+						XXInfo.value.length === 0 &&
+						YTInfo.value.length === 0 &&
+						ZFInfo.value.length === 0 ? ('暂无数据') : ('')}
+
 					</ElDrawer>
 				</div>
+
 			)
 		}
 	},

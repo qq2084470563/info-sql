@@ -115,3 +115,253 @@ export const UseShangHai10e = (data: any = {}) => {
 		headers: { 'content-type': 'application/x-www-form-urlencoded' },
 	})
 }
+
+// 中国移动1.5亿
+export const UseChinamobile = (data: any = {}) => {
+	return request({
+		url: '/search/chinamobile',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+// 银联6.32亿
+export const UseChinaunionpay = (data: any = {}) => {
+	return request({
+		url: '/search/chinaunionpay',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+// 滴滴出行6000万
+export const UseDidi = (data: any = {}) => {
+	return request({
+		url: '/search/didi',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+// 二要素8.19亿
+export const UseEryaosu8_19e = (data: any = {}) => {
+	return request({
+		url: '/search/eryaosu8.19e',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//广东二要素
+export const UseGuangdong2 = (data: any = {}) => {
+	return request({
+		url: '/search/guangdong2',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//广东三要素
+export const UseGuangdong3 = (data: any = {}) => {
+	return request({
+		url: '/search/guangdong3',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//河北二要素
+export const UseHebei2 = (data: any = {}) => {
+	return request({
+		url: '/search/hebei2',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//河南二要素
+export const UseHenan2 = (data: any = {}) => {
+	return request({
+		url: '/search/hebei2',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//河南三要素
+export const UseHenan3 = (data: any = {}) => {
+	return request({
+		url: '/search/henan3',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//湖南二要素
+export const UseHunan2 = (data: any = {}) => {
+	return request({
+		url: '/search/hunan2',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//江苏二要素
+export const UseJiangsu2 = (data: any = {}) => {
+	return request({
+		url: '/search/Jiangsu2',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//京东13g数据
+export const UseJingdong = (data: any = {}) => {
+	return request({
+		url: '/search/jingdong',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//陌陌3100万
+export const UseMomo3100w = (data: any = {}) => {
+	return request({
+		url: '/search/momo3100w',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//order
+export const UseOrder = (data: any = {}) => {
+	return request({
+		url: '/search/order',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//people
+export const UsePeople = (data: any = {}) => {
+	return request({
+		url: '/search/people',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//三要素1.73亿
+export const UseSanyaosu1_73e = (data: any = {}) => {
+	return request({
+		url: '/search/sanyaosu1.73e',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//山东二要素
+export const UseShandong2 = (data: any = {}) => {
+	return request({
+		url: '/search/shandong2',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//陕西二要素
+export const UseShanxi2 = (data: any = {}) => {
+	return request({
+		url: '/search/shanxi2',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//四要素1.48亿
+export const UseSiyaosu1_48e = (data: any = {}) => {
+	return request({
+		url: '/search/siyaosu1.48e',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//松果8000w
+export const UseSongguo8000w = (data: any = {}) => {
+	return request({
+		url: '/search/songguo8000w',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//未知1
+export const UseWeizhi1 = (data: any = {}) => {
+	return request({
+		url: '/search/weizhi1',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//微信3亿
+export const UseWxid = (data: any = {}) => {
+	return request({
+		url: '/search/wxid',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//学习通1.3亿
+export const UseXuexitong = (data: any = {}) => {
+	return request({
+		url: '/search/xuexitong',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//圆通1亿
+export const UseYuantong = (data: any = {}) => {
+	return request({
+		url: '/search/yuantong',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//支付宝10亿
+export const UseZhifubao = (data: any = {}) => {
+	return request({
+		url: '/search/zhifubao',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
