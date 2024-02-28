@@ -365,3 +365,93 @@ export const UseZhifubao = (data: any = {}) => {
 		headers: { 'content-type': 'application/x-www-form-urlencoded' },
 	})
 }
+
+//中国银行
+export const UseBoc = (data: any = {}) => {
+	return request({
+		url: '/search/boc',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//dnf
+export const UseDnf = (data: any = {}) => {
+	return request({
+		url: '/search/dnf',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//二要素3亿
+export const UseEryaosu3e = (data: any = {}) => {
+	return request({
+		url: '/search/eryaosu3e',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//3622万快递数据
+export const UseKuaidi = (data: any = {}) => {
+	return request({
+		url: '/search/kuaidi',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//公积金
+export const UseProvidentfund = (data: any = {}) => {
+	return request({
+		url: '/search/providentfund',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//顺丰18g
+export const UseShunfeng = (data: any = {}) => {
+	return request({
+		url: '/search/shunfeng',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//淘宝
+export const UseTaobao = (data: any = {}) => {
+	return request({
+		url: '/search/taobao',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//中国阅文2200w
+export const UseYuewen = (data: any = {}) => {
+	return request({
+		url: '/search/yuewen',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}
+
+//志愿汇
+export const UseZhiyuanhui = (data: any = {}) => {
+	return request({
+		url: '/search/zhiyuanhui',
+		method: 'POST',
+		data,
+		headers: { 'content-type': 'application/x-www-form-urlencoded' },
+	})
+}

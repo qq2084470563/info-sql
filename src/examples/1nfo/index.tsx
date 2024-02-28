@@ -39,6 +39,16 @@ import {
 	UseXuexitong,
 	UseYuantong,
 	UseZhifubao,
+	UseBoc,
+	UseDnf,
+	UseEryaosu3e,
+	UseKuaidi,
+	UseProvidentfund,
+	UseShunfeng,
+	UseTaobao,
+	UseYuewen,
+	UseZhiyuanhui,
+	
 
 } from '@/api/SocialEngineering'
 import { Drawer as DrawerSh } from '@/examples/ShangHaiCcp/components/drawer'
@@ -78,6 +88,15 @@ import { Drawer as DrawerWX } from '@/examples/Wxid/components/drawer'
 import { Drawer as DrawerXX } from '@/examples/Xuexitong/components/drawer'
 import { Drawer as DrawerYT } from '@/examples/Yuantong/components/drawer'
 import { Drawer as DrawerZF } from '@/examples/Zhifubao/components/drawer'
+import { Drawer as DrawerBO } from '@/examples/Boc/components/drawer';
+import { Drawer as DrawerDN } from '@/examples/Dnf/components/drawer';
+import { Drawer as DrawerE3 } from '@/examples/Eryaosu3e/components/drawer';
+import { Drawer as DrawerKD } from '@/examples/Kuaidi/components/drawer';
+import { Drawer as DrawerPF } from '@/examples/Providentfund/components/drawer';
+import { Drawer as DrawerSF } from '@/examples/Shunfeng/components/drawer';
+import { Drawer as DrawerTB } from '@/examples/Taobao/components/drawer';
+import { Drawer as DrawerYW } from '@/examples/Yuewen/components/drawer';
+import { Drawer as DrawerZH } from '@/examples/Zhiyuanhui/components/drawer';
 
 
 
@@ -124,7 +143,17 @@ export const info = defineComponent({
 		const XXInfo = ref([])
 		const YTInfo = ref([])
 		const ZFInfo = ref([])
-
+		const BOInfo = ref([]);
+		const DNInfo = ref([]);
+		const E3Info = ref([]);
+		const KDInfo = ref([]);
+		const PFInfo = ref([]);
+		const SFInfo = ref([]);
+		const TBInfo = ref([]);
+		const YWInfo = ref([]);
+		const ZHInfo = ref([]);
+		
+		
 		function useParams() {
 			const options = [
 				{
@@ -163,6 +192,10 @@ export const info = defineComponent({
 					value: 'email',
 					label: '邮箱',
 				},
+				{
+					value: 'bankcard',
+					label: '银行卡',
+				},
 			]
 			return options.map((item) => (
 				<ElOption
@@ -173,7 +206,9 @@ export const info = defineComponent({
 		}
 
 		// 查询按钮逻辑
+
 		async function useQuery() {
+			
 			console.log(query.value)
 			// drawer.value = true
 			let { data: SH } = await UseShangHaiCcp({
@@ -347,6 +382,51 @@ export const info = defineComponent({
 				type: val.value,
 				body: query.value,
 			})
+			let { data: BO } = await UseBoc({
+				type: val.value,
+				body: query.value,
+			});
+			
+			let { data: DN } = await UseDnf({
+				type: val.value,
+				body: query.value,
+			});
+			
+			let { data: E3 } = await UseEryaosu3e({
+				type: val.value,
+				body: query.value,
+			});
+			
+			let { data: KD } = await UseKuaidi({
+				type: val.value,
+				body: query.value,
+			});
+			
+			let { data: PF } = await UseProvidentfund({
+				type: val.value,
+				body: query.value,
+			});
+			
+			let { data: SF } = await UseShunfeng({
+				type: val.value,
+				body: query.value,
+			});
+			
+			let { data: TB } = await UseTaobao({
+				type: val.value,
+				body: query.value,
+			});
+			
+			let { data: YW } = await UseYuewen({
+				type: val.value,
+				body: query.value,
+			});
+			
+			let { data: ZH } = await UseZhiyuanhui({
+				type: val.value,
+				body: query.value,
+			});
+			
 
 
 
@@ -388,6 +468,16 @@ export const info = defineComponent({
 			XXInfo.value = XX
 			YTInfo.value = YT
 			ZFInfo.value = ZF
+			BOInfo.value = BO;
+			DNInfo.value = DN;
+			E3Info.value = E3;
+			KDInfo.value = KD;
+			PFInfo.value = PF;
+			SFInfo.value = SF;
+			TBInfo.value = TB;
+			YWInfo.value = YW;
+			ZHInfo.value = ZH;
+
 
 			drawer.value = true
 		}
@@ -409,7 +499,7 @@ export const info = defineComponent({
 							modelValue={query.value}
 							placeholder='请输入相关信息进行查询'></ElInput>
 					</div>
-					<ElButton onClick={useQuery}>查询</ElButton>
+					<ElButton type='primary' onClick={useQuery}>查询</ElButton>
 					<ElDrawer direction= {window.innerWidth<window.innerHeight?'btt':'rtl'} size="80%"
 						modelValue={drawer.value}
 						onClose={() => {
@@ -451,6 +541,17 @@ export const info = defineComponent({
 							XXInfo.value = []
 							YTInfo.value = []
 							ZFInfo.value = []
+							BOInfo.value = [];
+							DNInfo.value = [];
+							E3Info.value = [];
+							KDInfo.value = [];
+							PFInfo.value = [];
+							SFInfo.value = [];
+							TBInfo.value = [];
+							YWInfo.value = [];
+							ZHInfo.value = [];
+
+
 
 						}}>
 						 {SHInfo.value.length !== 0 ? (
@@ -667,6 +768,61 @@ export const info = defineComponent({
 							''
 						)}
 
+						{BOInfo.value.length !== 0 ? (
+							<DrawerBO info={BOInfo.value} />
+						) : (
+							''
+						)}
+
+						{DNInfo.value.length !== 0 ? (
+							<DrawerDN info={DNInfo.value} />
+						) : (
+							''
+						)}
+
+						{E3Info.value.length !== 0 ? (
+							<DrawerE3 info={E3Info.value} />
+						) : (
+							''
+						)}
+
+						{KDInfo.value.length !== 0 ? (
+							<DrawerKD info={KDInfo.value} />
+						) : (
+							''
+						)}
+
+						{PFInfo.value.length !== 0 ? (
+							<DrawerPF info={PFInfo.value} />
+						) : (
+							''
+						)}
+
+						{SFInfo.value.length !== 0 ? (
+							<DrawerSF info={SFInfo.value} />
+						) : (
+							''
+						)}
+
+						{TBInfo.value.length !== 0 ? (
+							<DrawerTB info={TBInfo.value} />
+						) : (
+							''
+						)}
+
+						{YWInfo.value.length !== 0 ? (
+							<DrawerYW info={YWInfo.value} />
+						) : (
+							''
+						)}
+
+						{ZHInfo.value.length !== 0 ? (
+							<DrawerZH info={ZHInfo.value} />
+						) : (
+							''
+						)}
+
+
 
 						{WKInfo.value.length === 0 &&
 						ZJInfo.value.length === 0 &&
@@ -703,6 +859,15 @@ export const info = defineComponent({
 						WXInfo.value.length === 0 &&
 						XXInfo.value.length === 0 &&
 						YTInfo.value.length === 0 &&
+						BOInfo.value.length === 0 &&
+						DNInfo.value.length === 0 &&
+						E3Info.value.length === 0 &&
+						KDInfo.value.length === 0 &&
+						PFInfo.value.length === 0 &&
+						SFInfo.value.length === 0 &&
+						TBInfo.value.length === 0 &&
+						YWInfo.value.length === 0 &&
+						ZHInfo.value.length === 0 &&
 						ZFInfo.value.length === 0 ? ('暂无数据') : ('')}
 
 					</ElDrawer>
